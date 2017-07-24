@@ -1,0 +1,84 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Api Documentation",
+        "version": "1.0",
+        "title": "Api Documentation",
+        "termsOfService": "urn:tos",
+        "contact": {},
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "greeting-controller",
+            "description": " Operatiune de salutare hi hi hi !"
+        }
+    ],
+    "paths": {
+        "/greeting": {
+            "get": {
+                "tags": [
+                    "greeting-controller"
+                ],
+                "summary": "get greeting - View a  hello response! ",
+                "description": " O nota pentru claritate",
+                "operationId": "getGreeting",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "User's name",
+                        "required": false,
+                        "type": "string",
+                        "default": "Bianca Culea"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved service",
+                        "schema": {
+                            "$ref": "#/definitions/Greeting"
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to view the resource"
+                    },
+                    "403": {
+                        "description": "Accessing the resource you were trying to reach is forbidden"
+                    },
+                    "404": {
+                        "description": "The resource you were trying to reach is not found"
+                    },
+                    "500": {
+                        "description": "Failure"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Greeting": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        }
+    }
+}
