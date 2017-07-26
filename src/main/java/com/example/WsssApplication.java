@@ -40,9 +40,11 @@ public class WsssApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				//registry.addMapping("/v2/api-docs/").allowedOrigins("http://localhost:8080");
-				registry.addMapping("/v2/api-docs/");
+				//registry.addMapping("/v2/api-docs/");
+				registry.addMapping("/greeting").allowedOrigins("http://localhost:9000");
 			}
 		};
 	}
+	//  obs we only allow http://localhost:9000 to send cross-origin requests..
 
 }
