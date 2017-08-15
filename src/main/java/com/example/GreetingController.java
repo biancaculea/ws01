@@ -24,8 +24,8 @@ public class GreetingController {
 
 
     //@ApiOperation(value = "View a  hello response",response = Greeting.class)
-    @ApiOperation(value = "get greeting - View a  hello response! ", nickname = "getGreeting", notes=" O nota pentru claritate", response = Greeting.class)
-    // Implementation Notes - notes=" O nota pentru claritate"
+    @ApiOperation(value = "get greeting - View a  hello response! ", nickname = "MyGetGreeting", notes=" O nota pentru claritate", response = Greeting.class)
+    // Implementation Notes vine din:  notes=" O nota pentru claritate"
 
     @ApiImplicitParams({
             @ApiImplicitParam(name = "name", value = "User's name", required = false, dataType = "string", paramType = "query", defaultValue="Bianca Culea")
